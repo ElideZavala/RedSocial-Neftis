@@ -100,7 +100,7 @@
 			box-shadow: 0 0 20px rgba(0, 0, 0, 0.543);
 			border-radius: 8px;
 			height: calc(5rem + 20vw);
-			min-width: 30vw;
+			min-width: 25vw;
 			padding: 4rem;
 
 			
@@ -116,7 +116,7 @@
 				color: var(--color-text);
 				padding: .5vw 1vw;
 			}
-			
+
 			&__email,
 			&__password {
 				background: transparent;
@@ -147,5 +147,4 @@
 		}
 
 	}
-
 }
