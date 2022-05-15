@@ -1,0 +1,48 @@
+// Font-Size
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
+
+// *-*-*-*-*-*-*-*-*-*-*-* Colors *-*-*-*-*-*-*-*-*-*-*-*-*
+
+// Light Color Palette (Custom Properties)
+.light {
+	--color-primary: #2A363B;
+	--color-primary-m: #2A363Bd1;
+	--color-secondary: #E84A5F;
+	--color-secondary-m: #E84A5Fd1;
+	--color-quaternary:#99B898;
+	--color-quaternary-m:#99B898D1;
+	--color-tertiary: #FF847C;
+	--color-tertiary-m: #FF847CD1;
+	--color-quinary: #FECEA8;
+	--color-quinary-m: #FECEA8D1;
+	--color-text: #2A363B;
+	--color-text2: #fff;
+}
+
+// Dark Color Palette (Custom Properties)
+.dark {
+	--color-primary: #000814;
+	--color-primary-m: #000814c8;
+	--color-secondary:#003566;
+	--color-secondary-m:#0035668c;
+	--color-tertiary: #001d3d;
+	--color-tertiary-m: #001d3dc4;
+	--color-quaternary: #006664;
+	--color-quaternary-m: #006664ab;
+	--color-quinary: #ffd60a;
+	--color-quinary-m: #ffd60abb;
+	--color-text: #fff;
+}
+
+// *-*-*-*-*-*-*-*-*-*- Font Size *-*-*-*-*-*-*-*-*-*-*-*-*
+$font-sizes: (
+	'font-size-small': calc(1.2rem + 0.5vw),
+	'font-size-regular': calc(1.5rem + 1vw),
+	'font-size-medium': calc(1.5rem + 2vw),
+	'font-size-large': calc(1.5rem + 5vw),
+	'font-size-xlarge': calc(2.5rem + 5vw),
+);
+
+@function font-size($font-size-style) {
+	@return map-get($font-sizes, $font-size-style) 
+};
