@@ -95,13 +95,12 @@
 		&--form {
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
-			// background-color: transparent;
+			justify-content: space-around;
 			background-color: var(--color-quaternary);
 			box-shadow: 0 0 20px rgba(0, 0, 0, 0.543);
 			border-radius: 8px;
 			height: calc(5rem + 20vw);
-			width: 30vw;
+			min-width: 30vw;
 			padding: 4rem;
 
 			
@@ -115,21 +114,22 @@
 				letter-spacing: 2px;
 				border-radius:  1rem;
 				color: var(--color-text);
+				padding: .5vw 1vw;
 			}
+			
 			&__email,
 			&__password {
-				padding: .5vw 1vw;
 				background: transparent;
 				box-shadow: 0 0 20px rgba(0, 0, 0, 0.543);
 				font-weight: 700;
 				letter-spacing: 2px;
 				text-indent: 10px;
+				// margin:0 2rem ;
 			}
 			
 			
 
 			&__button {
-				padding: .5vw 1vw ;
 				font-weight: 700;
 				text-transform: uppercase;
 				cursor: pointer;
