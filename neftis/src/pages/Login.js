@@ -5,7 +5,7 @@ const Login = () => {
 	const [password, setPassword] = useState('')
 
   return (
-    <div className="login dark"> {/* Colocar el thema Dark */}
+    <div className="login"> 
 		<div className="login__theme"></div>
       <h3 className="login__header">Social <span>Neftis</span></h3>
 		<h6 className="login__subheader">Login</h6>

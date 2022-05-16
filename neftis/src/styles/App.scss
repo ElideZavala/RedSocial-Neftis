@@ -5,3 +5,36 @@
 @import "3.utilities";
 @import "4.login";
 @import "5.register";
+
+// **-**-**-**-**-**-**-**-**-** Extend **-**-**-**-**-**-**-**-**-**-**
+%theme {
+	position: absolute;
+	top: 5rem;
+	right: 5rem;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: black;
+	cursor: pointer;
+}
+
+%input {
+	background: transparent;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.543);
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-indent: 10px;
+	text-shadow: 0 0 5px var(--color-text);
+}
+
+%inputBtn {
+	border: none;
+	outline: none;
+	font-family: 'Catamaran', sans-serif;
+	font-size: 1.2vw;
+	letter-spacing: 2px;
+	border-radius:  1rem;
+	color: var(--color-text);
+	padding: .5vw 1vw;
+}
+

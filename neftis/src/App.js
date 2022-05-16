@@ -9,7 +9,7 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div className="App light">
+    <div className="App light"> {/* Colocar el thema Dark o light*/}
       <Router>
         <Switch>
           {/* // Nombre de la ruta se llamada register. */}
