@@ -92,7 +92,7 @@
 			background-color: var(--color-quaternary);
 			box-shadow: 0 0 20px rgba(0, 0, 0, 0.543);
 			border-radius: 8px;
-			height: calc(5rem + 28vw);
+			height: calc(10rem + 25vw);
 			min-width: 25vw;
 			padding: 4rem;
 
@@ -131,6 +131,11 @@
 					box-shadow: 0 0 5px var(--color-secondary), 0 0 15px var(--color-primary);
 					color: var(--color-text2);
 				}
+			}
+
+			&__small {
+				@extend %formSmall;
+				padding: 1rem;
 			}
 		}
 

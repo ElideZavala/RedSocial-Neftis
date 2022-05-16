@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
 	const [fullname, setFullname] = useState('')
@@ -11,7 +12,7 @@ const Register = () => {
 	<div className="register "> {/* Colocar el thema Dark */}
 	<div className="register__theme"></div>
 	<h3 className="register__header">Social <span>Neftis</span></h3>
-	<h6 className="register__subheader">register</h6>
+	<h6 className="register__subheader">Register</h6>
 	<div className="register__data">
 		<form className="register__data--form">
 			<input 
@@ -49,7 +50,8 @@ const Register = () => {
 				onChange={(e)=> setConfirmPassword(e.target.confirmPassword)} 
 				placeholder="Confirm your Password">
 			</input>
-			<button className="register__data--form__button" type="submit">Log In</button>
+			<button className="register__data--form__button" type="submit">Sing Up</button>
+			<small  className="register__data--form__small">Already have an account <Link to="/">Log In Here</Link></small>
 		</form>
 	</div>
  </div>

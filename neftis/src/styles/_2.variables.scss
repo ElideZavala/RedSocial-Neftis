@@ -23,7 +23,7 @@
 .dark {
 	--color-primary: #00cbe0;
 	// --color-primary-m: #00cbe0c8;
-	--color-secondary:#539DEA;
+	--color-secondary:#005595;
 	// --color-secondary-m:#0035668c;
 	--color-tertiary: #002C73;
 	// --color-tertiary-m: #003566c4;
@@ -36,9 +36,9 @@
 
 // *-*-*-*-*-*-*-*-*-*- Font Size *-*-*-*-*-*-*-*-*-*-*-*-*
 $font-sizes: (
-	'font-size-small': calc(1.2rem + 0.5vw),
+	'font-size-small': calc( 10px + .5vw),
 	'font-size-regular': calc(1.5rem + 1vw),
-	'font-size-medium': calc(1.5rem + 2vw),
+	'font-size-medium': calc(8px + .9vw),
 	'font-size-large': calc(1.5rem + 5vw),
 	'font-size-xlarge': calc(2.5rem + 5vw),
 );

@@ -95,8 +95,15 @@
 			height: calc(5rem + 20vw);
 			min-width: 25vw;
 			padding: 4rem;
-
+			position: relative;
 			
+			&__showpass {
+				position: absolute;
+				top: 41.5%;
+				right: 17%;
+				cursor: pointer;
+			}
+
 			&__email,
 			&__password,
 			&__button {
@@ -107,8 +114,6 @@
 			&__password {
 				@extend %input;
 			}
-			
-			
 
 			&__button {
 				font-weight: 800;
@@ -124,6 +129,10 @@
 					box-shadow: 0 0 5px var(--color-secondary), 0 0 15px var(--color-primary);
 					color: var(--color-text2);
 				}
+			}
+
+			&__small {
+				@extend %formSmall;
 			}
 		}
 

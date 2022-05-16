@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+	const [showpass, setShowass] = useState(false)
 
   return (
     <div className="login"> 
@@ -21,11 +23,13 @@ const Login = () => {
 				<input 
 					className="login__data--form__password"
 					type="password"
-					value={password}
+					value={showpass ? "type" : "password"} /*{Si showpass es true sera type si es false password }*/
 					onChange={(e)=> setPassword(e.target.password)} 
 					placeholder="Type your password">
 				</input>
+				<small className="login__data--form__showpass" onClick={()=>setShowass(!showpass)}> show </small> 
 				<button className="login__data--form__button" type="submit">Log In</button>
+				<p onClick={()=>setShowass(!showpass)} className="login__data--form__small">Do not have account <Link to="register">Create Here</Link></p>
 			</form>
 		</div>
     </div>
