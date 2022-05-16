@@ -19,19 +19,19 @@ const Login = () => {
 					className="login__data--form__email"
 					type="email"
 					value={email}
-					onChange={(e)=> setEmail(e.target.email)} 
+					onChange={(e)=> setEmail(e.target.value)} 
 					placeholder="Type your email">
 				</input>
 				<input 
 					className="login__data--form__password"
 					type={showpass ? "type" : "password"} /*{Si showpass es true sera type si es false password }*/
 					value={password}
-					onChange={(e)=> setPassword(e.target.password)} 
+					onChange={(e)=> setPassword(e.target.value)} 
 					placeholder="Type your password">
 				</input>
 				<small className="login__data--form__showpass" onClick={()=>setShowass(!showpass)}>{showpass ? "Hide" : "Show" }</small>
 				<button className="login__data--form__button" type="submit">Log In</button>
-				<p onClick={()=>setShowass(!showpass)} className="login__data--form__small">Do not have account <Link to="register">Create Here</Link></p>
+				<p className="login__data--form__small">Do not have account <Link to="register">Create Here</Link></p>
 			</form>
 		</div>
     </div>
