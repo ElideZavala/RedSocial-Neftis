@@ -40,10 +40,10 @@
 }
 
 %formSmall {
-	font-size: font-size(font-size-small);
+	font-size: font-size(font-size-regular);
 	text-align: center;
 
-	a{
+	a {
 		color: var(--color-primary);
 		margin-left: .5vw;
 	}

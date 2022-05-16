@@ -36,11 +36,11 @@
 
 // *-*-*-*-*-*-*-*-*-*- Font Size *-*-*-*-*-*-*-*-*-*-*-*-*
 $font-sizes: (
-	'font-size-small': calc( 10px + .5vw),
-	'font-size-regular': calc(1.5rem + 1vw),
+	'font-size-small': calc( 8px + .5vw),
+	'font-size-regular': calc( 8px + .6vw),
 	'font-size-medium': calc(8px + .9vw),
-	'font-size-large': calc(1.5rem + 5vw),
-	'font-size-xlarge': calc(2.5rem + 5vw),
+	'font-size-large': calc(1rem + 1vw),
+	'font-size-xlarge': calc(1rem + 2vw),
 );
 
 @function font-size($font-size-style) {
