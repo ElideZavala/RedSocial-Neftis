@@ -7,7 +7,7 @@ const Login = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [showpass, setShowass] = useState(false)
-	const [userData, setUserData] = useState({})
+	const [userData, setUserData] = useState({email, password})
 
 	const handleSubmit = e => {
 		e.preventDefault()

@@ -29,7 +29,7 @@ export const patchDataApi = async (url, post, token) => {
 }
 
 export const deleteDataApi = async (url, token) => {
-	const res = await axios.delete(`url/${url}`, post, {
+	const res = await axios.delete(`url/${url}`, {
 		header: {Authorization: token}
 	})
 	return res;
