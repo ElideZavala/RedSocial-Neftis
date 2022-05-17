@@ -1,5 +1,6 @@
-import "./styles/App.scss"
+import { useDispatch, useSelector } from 'react-redux'; // Queremos seleccionar algo de nuestro Redux. 
 
+import "./styles/App.scss"
 import "./index.css"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from './pages/Register';
@@ -8,6 +9,11 @@ import Post from './pages/Post';
 import NotFound from './pages/NotFound';
 
 function App() {
+
+  const { counter } = useSelector( state  => state.counter )
+  const dispatch = useDispatch();
+
+
   return (
     <div className="App light"> {/* Colocar el thema dark o light*/}
       <Router>

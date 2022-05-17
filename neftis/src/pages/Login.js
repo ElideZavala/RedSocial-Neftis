@@ -7,6 +7,12 @@ const Login = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [showpass, setShowass] = useState(false)
+	const [userData, setUserData] = useState({})
+
+	const handleSubmit = e => {
+		e.preventDefault()
+		setUserData({...userData, email, password })
+	}
 
   return (
     <div className="login"> 
@@ -14,7 +20,7 @@ const Login = () => {
       <h3 className="login__header">Social <span>Neftis</span></h3>
 		<h6 className="login__subheader">Login</h6>
 		<div className="login__data">
-			<form className="login__data--form">
+			<form className="login__data--form" onSubmit={handleSubmit}>
 				<input 
 					className="login__data--form__email"
 					type="email"
