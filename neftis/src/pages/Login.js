@@ -1,17 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { login } from "../redux/actions/authActions";
+import { useDispatch } from "react-redux";
+
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const Login = () => {
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
-	const [showpass, setShowass] = useState(false)
-	const [userData, setUserData] = useState({email, password})
+	const initialState = {email: '', password: ''}
+	const [showpass, setShowpass] = useState(false)
+	const [userData, setUserData] = useState(initialState)
+ 	const dispatch = useDispatch();
+	const {email, password} = userData; 
+ 
+ 	// Cada que cambie nuestro nombre y email. 
+	const handleChange = (e) => {
+		const {name, value} = e.target;
+		setUserData({...userData, [name]: value})
+	}
 
-	const handleSubmit = e => {
+	// Cuando demos Submit a nuestro form. 
+	const handleSubmit = (e) => {
 		e.preventDefault()
-		setUserData({...userData, email, password })
+		dispatch(login(userData))
 	}
 
   return (
@@ -24,18 +35,20 @@ const Login = () => {
 				<input 
 					className="login__data--form__email"
 					type="email"
+					name='email'
 					value={email}
-					onChange={(e)=> setEmail(e.target.value)} 
+					onChange={handleChange} 
 					placeholder="Type your email">
 				</input>
 				<input 
 					className="login__data--form__password"
 					type={showpass ? "type" : "password"} /*{Si showpass es true sera type si es false password }*/
 					value={password}
-					onChange={(e)=> setPassword(e.target.value)} 
+					name='password'
+					onChange={handleChange} 
 					placeholder="Type your password">
 				</input>
-				<small className="login__data--form__showpass" onClick={()=>setShowass(!showpass)}>{showpass ? "Hide" : "Show" }</small>
+				<small className="login__data--form__showpass" onClick={()=>setShowpass(!showpass)}>{showpass ? "Hide" : "Show" }</small>
 				<button className="login__data--form__button" type="submit">Log In</button>
 				<p className="login__data--form__small">Do not have account <Link to="register">Create Here</Link></p>
 			</form>
