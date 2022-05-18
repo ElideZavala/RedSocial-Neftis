@@ -5,11 +5,18 @@ export const TYPES = {
 }
 
 export const login = (data) => async (dispatch) => {
-	console.log({data}) 
 	try {
 		const res = await postDataApi('login', data);
-		console.log(res) 
+		console.log(data);
+		dispatch({
+			type: 'AUTH',
+			payload: {
+				token: res.data.accessToken,
+				user: res.data.user,
+			} 
+		})
 		
+		localStorage.setItem('login', true)
 	} catch (error) {
 		console.log(error.response.data.msg)
 	}
