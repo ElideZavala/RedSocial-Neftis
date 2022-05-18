@@ -1,4 +1,5 @@
 import { postDataApi } from '../../utils/fetchDataApi';
+import { ALERT_TYPES } from "./alertActions";
 
 export const TYPES = {
 	AUTH : 'AUTH'
@@ -6,6 +7,12 @@ export const TYPES = {
 
 export const login = (data) => async (dispatch) => {
 	try {
+		dispatch({
+			type: ALERT_TYPES.ALERT,
+			payload: {
+				loading: true,
+			}
+		})
 		const res = await postDataApi('login', data);
 		console.log(data);
 		dispatch({
@@ -16,8 +23,21 @@ export const login = (data) => async (dispatch) => {
 			} 
 		})
 		
-		localStorage.setItem('login', true)
+		localStorage.setItem('login', true);
+
+		dispatch({
+			type: ALERT_TYPES.ALERT,
+			payload: {
+				success:res.data.msg,
+			}
+		})
 	} catch (error) {
 		console.log(error.response.data.msg)
+		dispatch({
+			type: ALERT_TYPES.ALERT,
+			payload: {
+				success:error.response.data.msg,
+			}
+		})
 	}
 }
