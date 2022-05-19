@@ -5,12 +5,14 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Post from './pages/Post';
 import NotFound from './pages/NotFound';
+import Alert from "./components/Alert";
 
 function App() {
 
   return (
     <div className="App light"> {/* Colocar el thema dark o light*/}
       <Router>
+        <Alert/>
         <Switch>
           {/* // Nombre de la ruta se llamada register. */}
           <Route exact path="/register"> 
