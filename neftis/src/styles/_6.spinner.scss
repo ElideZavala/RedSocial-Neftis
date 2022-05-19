@@ -7,9 +7,8 @@
 	position: absolute;
 	top: 50%;
   left: 50%;
-  margin: 100px auto;
-  width: 7vw;
-  height: 7vw;
+  width: 5vw;
+  height: 5vw;
   text-align: center;
   
   -webkit-animation: sk-rotate 2.0s infinite linear;
@@ -22,7 +21,7 @@
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   border-radius: 100%;
   
   -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
