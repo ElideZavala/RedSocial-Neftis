@@ -6,8 +6,18 @@ import Login from './pages/Login';
 import Post from './pages/Post';
 import NotFound from './pages/NotFound';
 import Alert from "./components/Alert";
+import Home from "./pages/Home";
+import { useSelector, useDispatch } from 'react-redux'
+import { useEffect } from "react";
+import { refreshToken } from './redux/actions/authActions';
 
 function App() {
+  const {auth} = useSelector(state => state);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshToken())
+  },[dispatch])
 
   return (
     <div className="App light"> {/* Colocar el thema dark o light*/}
@@ -20,7 +30,8 @@ function App() {
             <Register />
           </Route>
           <Route exact path="/">
-            <Login /> 
+            {/* {auth.token ? <Login/> : <Home/>}  */}
+            {auth.token ? <Home/> : <Login/>} 
           </Route>
           <Route exact path='/post/:id'>
             <Post/>

@@ -23,8 +23,6 @@ export const login = (data) => async (dispatch) => {
 			} 
 		})
 		
-		localStorage.setItem('login', true);
-
 		dispatch({
 			type: ALERT_TYPES.ALERT,
 			payload: {
@@ -39,5 +37,42 @@ export const login = (data) => async (dispatch) => {
 				error:error.response.data.msg,
 			}
 		})
+	}
+}
+
+export const refreshToken = () => async( dispatch ) => {
+	const login = localStorage.getItem('login')
+	if(login){
+		dispatch({
+			type: 'ALERT',
+			payload: {
+				loading: true,
+			}
+		})
+
+		try {
+			const res = await postDataApi('refresh_token')
+			dispatch({
+				type: 'AUTH',
+				payload: {
+					token: res.data.accessToken,
+					user: res.data.user,
+				}
+			})
+
+			dispatch({
+				type: ALERT_TYPES.ALERT,
+				payload: {
+					success:res.data.msg,
+				}
+			})
+		} catch (error) {
+			dispatch({
+				type: 'ALERT',
+				payload: {
+					error:error.response.data.msg
+				}
+			})
+		}
 	}
 }
