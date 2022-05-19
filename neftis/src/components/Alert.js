@@ -5,11 +5,20 @@ import Toast from './Toast';
 
 const Alert = () => {
 	const { auth, alert } = useSelector(state => state); 
-	console.log({ auth, alert })
+	const dispatch = useDispatch();
+
+	const close = () => {
+		dispatch({
+			type: 'ALERT',
+			payload: {}
+		})
+	}
+
 	return(
 		<div>
 			{alert.loading && <Loading/>}
-			<Toast/>
+			{alert.error && <Toast msg={{title:'Error', body:alert.error}} bgColor="#ED2939" handleShow={close}/>}
+			{alert.success && <Toast msg={{title:'Success', body:alert.success}} bgColor="   #50C878" handleShow={close}/>}
 		</div>
 	)
 }
