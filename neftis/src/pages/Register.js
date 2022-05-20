@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
+import { register } from '../redux/actions/authActions'
+
 
 const Register = () => {
 	const initialState = {username:'', fullname:'', email:'', password:'', confirmPassword:'', gender:'male'}
@@ -19,15 +21,16 @@ const Register = () => {
 		setuserData({...userData, [name]:value})
 	}
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-	}
-
 	// useEffect(() => {
 	// 	if(auth.token) {
 	// 		history.push('/')
 	// 	}
 	// },[auth.token, history])
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		dispatch(register(userData));
+	}
 
   return (
 	<div className="register "> {/* Colocar el thema Dark */}
@@ -84,6 +87,7 @@ const Register = () => {
 
 			<select 
 				className="register__data--form__select" 
+				name="gender"
 				value={gender} 
 				onChange={handleChange}
 			 	placeholder="Gender">
