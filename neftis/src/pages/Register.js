@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-	const [fullname, setFullname] = useState('')
-	const [username, setUsername] = useState('')
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
-	const [confirmPassword, setConfirmPassword] = useState('')
+	const initialState = {username:'', fullname:'', email:'', password:'', confirmPassword:'', gender:'male'}
+	
 	const [showpass, setShowpass] = useState(false)
 	const [showconfpass, setShowconfpass] = useState(false)
-	const [gender, setGender] = useState('')
+	const [userData, setuserData] = useState(initialState)
+
+	const handleChange = (e) => {
+		const {name, value} = e.target;
+		setuserData({...userData, [name]:value})
+	}
 
   return (
 	<div className="register "> {/* Colocar el thema Dark */}
